@@ -1,0 +1,44 @@
+﻿<style type="text/css">
+    table td
+    {
+        height: 54px;
+        width: 54px;
+        background: #eee;
+        border: solid 0.1em #666;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 18px;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 style="color: #666"># <span style="color: red">TIC</span>-<span style="color: green">TAC</span>-<span style="color: blue">TOE</span>!</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="board-wrapper" ng-controller="TicTacToeCtrl">
+        <h3>Player: <strong>{{player}}</strong>
+        </h3>
+        <br />
+
+        <h1 ng-show="winner">Winner: <strong>{{winner}}</strong>
+        </h1>
+
+        <table>
+            <tr ng-repeat="row in rows">
+                <td ng-repeat="cell in row" ng-click="cellClick(cell)">{{cell.value}}
+                </td>
+            </tr>
+        </table>
+        <br />
+        <button class="btn btn-primary btn-lg" ng-show="winner" ng-click="resetBoard()">
+            RESET BOARD
+        </button>
+
+    </div>
+
+</div>
